@@ -1,19 +1,30 @@
 const express = require('express');
+const {
+  getProfile,
+  updateProfile,
+  getImpact,
+  getBadges,
+  getLeaderboard,
+  uploadAvatar,
+  getUserStats
+} = require('../controllers/userController');
+const { protect, optionalAuth } = require('../middleware/auth');
+
 const router = express.Router();
 
-// TODO: Import user controller when created
+// Profile routes
+router.get('/profile', protect, getProfile);
+router.put('/profile', protect, updateProfile);
 
-// Temporary placeholder routes
-router.get('/profile', (req, res) => {
-  res.status(501).json({ success: false, message: 'Get profile endpoint - to be implemented' });
-});
+// Impact & Stats routes
+router.get('/impact', protect, getImpact);
+router.get('/badges', protect, getBadges);
+router.get('/stats', protect, getUserStats);
 
-router.put('/profile', (req, res) => {
-  res.status(501).json({ success: false, message: 'Update profile endpoint - to be implemented' });
-});
+// Leaderboard (public but shows rank if authenticated)
+router.get('/leaderboard', optionalAuth, getLeaderboard);
 
-router.get('/impact', (req, res) => {
-  res.status(501).json({ success: false, message: 'Get impact stats endpoint - to be implemented' });
-});
+// Avatar upload
+router.post('/avatar', protect, uploadAvatar);
 
 module.exports = router;

@@ -31,6 +31,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'https://res.cloudinary.com/demo/image/upload/default-avatar.png'
   },
+  dateOfBirth: {
+    type: Date
+  },
+  gender: {
+    type: String,
+    enum: ['male', 'female', 'other']
+  },
   role: {
     type: String,
     enum: ['user', 'brand', 'admin', 'collector'],
