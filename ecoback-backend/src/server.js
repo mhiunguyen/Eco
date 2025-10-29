@@ -54,16 +54,19 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '0.0.0.0';
 
-const server = app.listen(PORT, HOST, () => {
-  console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on ${HOST}:${PORT}`);
-  console.log(`📡 Local: http://localhost:${PORT}`);
-  console.log(`📡 Network: http://192.168.100.174:${PORT}`);
-});
+// Only start server if not in Vercel serverless environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const server = app.listen(PORT, HOST, () => {
+    console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on ${HOST}:${PORT}`);
+    console.log(`📡 Local: http://localhost:${PORT}`);
+    console.log(`📡 Network: http://192.168.100.174:${PORT}`);
+  });
 
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err) => {
-  console.error(`Error: ${err.message}`);
-  server.close(() => process.exit(1));
-});
+  // Handle unhandled promise rejections
+  process.on('unhandledRejection', (err) => {
+    console.error(`Error: ${err.message}`);
+    server.close(() => process.exit(1));
+  });
+}
 
 module.exports = app;
