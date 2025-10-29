@@ -215,7 +215,6 @@ VITE_GOOGLE_MAPS_KEY=your-google-maps-key
 
 ## 📞 Support
 
-- Issues: GitHub Issues
 - Email: mhiuqrqq1411@gmail.com
 
 ---
