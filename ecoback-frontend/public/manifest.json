@@ -1,0 +1,29 @@
+{
+  "name": "EcoBack - Tái chế thông minh",
+  "short_name": "EcoBack",
+  "description": "Ứng dụng tái chế thông minh, quét QR để nhận thưởng",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "utilities"],
+  "lang": "vi-VN",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

@@ -4,6 +4,7 @@ import useAuthStore from './store/authStore';
 // Layout
 import MainLayout from './components/layout/MainLayout';
 import AutoLogin from './components/AutoLogin';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -27,6 +28,7 @@ function App() {
   return (
     <BrowserRouter>
       <AutoLogin />
+      <PWAInstallPrompt />
       <Routes>
         {/* Public Routes */}
         <Route path="/login" element={<LoginPage />} />
