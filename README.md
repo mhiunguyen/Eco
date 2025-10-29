@@ -214,8 +214,6 @@ VITE_GOOGLE_MAPS_KEY=your-google-maps-key
 - Verify backend is running
 
 ## 📞 Support
-
-- Issues: GitHub Issues
 - Email: mhiuqrqq1411@gmail.com
 
 ---
