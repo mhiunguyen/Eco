@@ -17,6 +17,7 @@ import WalletPage from './pages/WalletPage';
 import MapPage from './pages/MapPage';
 import QRScannerPage from './pages/QRScannerPage';
 import LeaderboardPage from './pages/LeaderboardPage';
+import ChatPage from './pages/ChatPage';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -41,6 +42,7 @@ function App() {
           <Route path="products/:id" element={<ProductDetailPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />
           <Route path="map" element={<MapPage />} />
+          <Route path="chat" element={<ChatPage />} />
           
           {/* Protected Routes */}
           <Route path="profile" element={

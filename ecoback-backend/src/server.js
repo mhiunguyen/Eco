@@ -37,6 +37,7 @@ app.use('/api/qrcodes', require('./routes/qrcodeRoutes'));
 app.use('/api/wallet', require('./routes/walletRoutes'));
 app.use('/api/collection-points', require('./routes/collectionPointRoutes'));
 app.use('/api/recycle-requests', require('./routes/recycleRequestRoutes'));
+app.use('/api/chat', require('./routes/chatRoutes'));
 
 // Health check
 app.get('/health', (req, res) => {
